@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data Display</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Mid-day Humidity in Newbury Park</h1>
+    <nav>
+        <a href="temperature.html">
+        <button id="btn1">Temperature</button>
+    </a>
+    <a href="humidity.html">
+        <button id="btn2">Relative Humidity</button>
+    </a>
+    <h1>Humidity Data</h1>
+    <p id="humidity">Loading...</p>
+    <script>
+        // Function to fetch humidity data
+        async function infoget() {
+            try {
+                const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=34.1842&longitude=-118.9107&hourly=relative_humidity_2m&timezone=America%2FLos_Angeles"); 
+                const data = await response.json();
+                
+                // Update the page with the humidity data
+                document.getElementById("humidity").innerText = `Humidity: ${data.hourly.relative_humidity_2m[0]}°C`;
+
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                document.getElementById("humidity").innerText = "Failed to load data.";
+            }
+        }
+
+        // Fetch data as soon as the page loads
+        window.onload = infoget;
+    </script>
+    </nav>
+</body>
+</html>
