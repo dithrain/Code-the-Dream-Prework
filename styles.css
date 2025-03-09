@@ -1,23 +1,23 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, sans-serif;
     text-align: center;
 }
 
 nav {
-    margin: 20px;
+    margin: 10px;
 }
 
 button {
-    margin: 5px;
-    padding: 10px;
-    background-color: #007bff;
+    margin: 20px;
+    padding: 30px;
+    background-color: #274690;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #576CA8;
 }
 
 #output {

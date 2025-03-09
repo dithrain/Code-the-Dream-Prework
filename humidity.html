@@ -25,7 +25,7 @@
                 const data = await response.json();
                 
                 // Update the page with the humidity data
-                document.getElementById("humidity").innerText = `Humidity: ${data.hourly.relative_humidity_2m[0]}°C`;
+                document.getElementById("humidity").innerText = `Humidity: ${data.hourly.relative_humidity_2m[0]}%`;
 
             } catch (error) {
                 console.error("Error fetching data:", error);
